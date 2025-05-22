@@ -1,6 +1,8 @@
 import sys
 from rknn.api import RKNN
+# https://github.com/airockchip/rknn_model_zoo/issues/59
 
+DATASET_PATH = '/home/wdxm/code/luck_fox/rknn_model_zoo/datasets/yamnet/yamnet_20.txt'
 DEFAULT_QUANT = False
 
 def parse_arg():
@@ -53,7 +55,7 @@ if __name__ == '__main__':
 
     # Build model
     print('--> Building model')
-    ret = rknn.build(do_quantization=do_quant)
+    ret = rknn.build(do_quantization=do_quant, dataset=DATASET_PATH)
     if ret != 0:
         print('Build model failed!')
         exit(ret)
