@@ -31,7 +31,7 @@ set(CMAKE_INSTALL_RPATH "$ORIGIN/../lib")
 file(GLOB SRCS ${CMAKE_CURRENT_SOURCE_DIR}/*.cc)
 
 add_executable(${PROJECT_NAME}
-    main.cc
+    main_floder.cc
     postprocess.cc
     ${rknpu_yolo11_file}
 )
@@ -102,7 +102,7 @@ if (NOT (TARGET_SOC STREQUAL "rv1106" OR TARGET_SOC STREQUAL "rv1103" OR TARGET_
 endif()
 
 install(TARGETS ${PROJECT_NAME} DESTINATION .)
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../model/bus.jpg DESTINATION model)
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../model/coco_80_labels_list.txt DESTINATION model)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../model/mosquito.jpg DESTINATION model)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../model/mosquito.txt DESTINATION model)
 file(GLOB RKNN_FILES "${CMAKE_CURRENT_SOURCE_DIR}/../model/*.rknn")
 install(FILES ${RKNN_FILES} DESTINATION model)
